@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <title>casestudy2</title>
+    </head>
+
+        <body>
+                <input  id="name" type="text" placeholder="What need to be done?"style= "text-align:center" required="required"  >
+
+                    <div id="print">
+                        <ul id="ul1">
+                            
+                        </ul>
+                    </div>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+                <script>
+
+                            $(document).on("keypress", "input", function(e){                        //identifying theenter key 
+                            if(e.which == 13){
+                            var a=document.getElementById("name").value;
+                            var node=document.createElement("li");
+                            var textnode=document.createTextNode(a);
+                            node.appendChild(textnode);
+                            document.getElementById("ul1").appendChild(node);
+                            var text=document.getElementById("name");
+                            text.value="";
+                             }
+                            
+                         });
+                            
+                         $("#ul1").on("click","li",function () {           //used for removing the list
+                         $(this).remove();
+                          });
+
+                </script>
+        </body>
+        
+       
+    <style>
+       li{
+           list-style: none;
+           font-size: 30px;
+           
+         }
+        li:hover{
+             text-decoration: line-through ;
+        }
+        #name{
+            margin-left: 300px;
+            margin-top: 100px;
+            padding: 15px;
+            width: 500px;
+        }
+        #ul1{
+            margin-left: 500px;
+            margin-top: 50px;
+            padding: 15px;
+        }
+        ::placeholder{
+        font-size: 30px;
+        font-weight: bold;
+        }
+
+    </style>
+    
+</html>
+        
+
+  

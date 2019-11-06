@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>Hexcodegenerator</title>
+    </head>
+    <body>
+        <center><h1>Build a Hex Color Generator</h1>
+            <p id="box" style="height: 300px; width: 300px;border: black; "></p>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+          $(document).ready(function () {
+          setInterval(function () {
+          var hex=["1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"];
+          var colors="#";
+          for (var i = 0; i < 6; i++) {
+          colors+=hex[(Math.floor(Math.random() * 16))];
+          }
+          $("#box").css("background-color",colors);
+           },500);
+          });
+         
+        </script>
+
+    </body>
+</html>
